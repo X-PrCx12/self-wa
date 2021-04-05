@@ -20,7 +20,7 @@
 ```bash
 > git clone https://github.com/LitRHap/self-wa
 ```
-> [ ] FREE
+
 ## Install the dependencies:
 Before running the below command, make sure you're in the project directory that
 you've just cloned!!
@@ -35,10 +35,8 @@ you've just cloned!!
 > node index.js
 ```
 
-### Info
-```
-prefix = z
-```
+### Change/Info
+> 1.[prefix](https://github.com/X-PrCx12/wa-self/blob/master/x.js)
 
 ### Features
 
