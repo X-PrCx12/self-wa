@@ -1,5 +1,6 @@
 /*
 * Thanks For 𝗠𝗵𝗮𝗻𝗸𝗕𝗮𝗿𝗕𝗮𝗿
+* ж-ргсж¹²
 */
 
 const
@@ -43,10 +44,10 @@ const speed = require('performance-now')
 const speedTest = require('@lh2020/speedtest-net');
 const { Utils_1 } = require('./node_modules/@adiwajshing/baileys/lib/WAConnection/Utils')
 
-prefix = 'z'
-fake = '*LitRHap-SELF*'
+prefix = '.'
+mark = '*SELF*'
 numbernye = '0'
-targetprivate = '918119971193'
+targetprivate = '721384885456'
 blocked = []            
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
@@ -150,29 +151,29 @@ client.on('CB:Blocklist', json => {
 	    }
 	})
 	
-client.on('message-update', async (hurtz) => {
+client.on('message-update', async (xpasha) => {
 	try {
-		const from = hurtz.key.remoteJid
-		const messageStubType = WA_MESSAGE_STUB_TYPES[hurtz.messageStubType] || 'MESSAGE'
+		const from = xpasha.key.remoteJid
+		const messageStubType = WA_MESSAGE_STUB_TYPES[xpasha.messageStubType] || 'MESSAGE'
 		const dataRevoke = JSON.parse(fs.readFileSync('./src/gc-revoked.json'))
 		const dataCtRevoke = JSON.parse(fs.readFileSync('./src/ct-revoked.json'))
 		const dataBanCtRevoke = JSON.parse(fs.readFileSync('./src/ct-revoked-banlist.json'))
-		const sender = hurtz.key.fromMe ? client.user.jid : hurtz.key.remoteJid.endsWith('@g.us') ? hurtz.participant : hurtz.key.remoteJid
-		const isRevoke = hurtz.key.remoteJid.endsWith('@s.whatsapp.net') ? true : hurtz.key.remoteJid.endsWith('@g.us') ? dataRevoke.includes(from) : false
-		const isCtRevoke = hurtz.key.remoteJid.endsWith('@g.us') ? true : dataCtRevoke.data ? true : false
-		const isBanCtRevoke = hurtz.key.remoteJid.endsWith('@g.us') ? true : !dataBanCtRevoke.includes(sender) ? true : false
+		const sender = xpasha.key.fromMe ? client.user.jid : xpasha.key.remoteJid.endsWith('@g.us') ? xpasha.participant : xpasha.key.remoteJid
+		const isRevoke = xpasha.key.remoteJid.endsWith('@s.whatsapp.net') ? true : xpasha.key.remoteJid.endsWith('@g.us') ? dataRevoke.includes(from) : false
+		const isCtRevoke = xpasha.key.remoteJid.endsWith('@g.us') ? true : dataCtRevoke.data ? true : false
+		const isBanCtRevoke = xpasha.key.remoteJid.endsWith('@g.us') ? true : !dataBanCtRevoke.includes(sender) ? true : false
 		if (messageStubType == 'REVOKE') {
 			console.log(`Status untuk grup : ${!isRevoke}\nStatus semua kontak : ${!isCtRevoke}\nStatus kontak dikecualikan : ${!isBanCtRevoke}`)
 			if (!isRevoke) return
 			if (!isCtRevoke) return
 			if (!isBanCtRevoke) return
-			const from = hurtz.key.remoteJid
-			const isGroup = hurtz.key.remoteJid.endsWith('@g.us') ? true : false
+			const from = xpasha.key.remoteJid
+			const isGroup = xpasha.key.remoteJid.endsWith('@g.us') ? true : false
 			let int
 			let infoMSG = JSON.parse(fs.readFileSync('./src/.dat/msg.data.json'))
-			const id_deleted = hurtz.key.id
-			const conts = hurtz.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
-			const pushname = hurtz.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
+			const id_deleted = xpasha.key.id
+			const conts = xpasha.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
+			const pushname = xpasha.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
 			const opt4tag = {
 				contextInfo: { mentionedJid: [sender] }
 			}
@@ -193,7 +194,7 @@ client.on('message-update', async (hurtz) => {
 			const body = int.type == 'conversation' ? infoMSG[index].message.conversation : int.type == 'extendedTextMessage' ? infoMSG[index].message.extendedTextMessage.text : int.type == 'imageMessage' ? infoMSG[index].message.imageMessage.caption : int.type == 'stickerMessage' ? 'Sticker' : int.type == 'audioMessage' ? 'Audio' : int.type == 'videoMessage' ? infoMSG[index].videoMessage.caption : infoMSG[index]
 			const mediaData = int.type === 'extendedTextMessage' ? JSON.parse(JSON.stringify(int.data).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : int.data
 			var itsme = `${numbernye}@s.whatsapp.net`
-				var split = `${fake}`
+				var split = `${mark}`
 				// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 				var selepbot72 = {
 					contextInfo: {
@@ -216,7 +217,7 @@ client.on('message-update', async (hurtz) => {
 				client.sendMessage(from, strConversation, MessageType.text, selepbot72)
 			} else if (int.type == 'stickerMessage') {
 				var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					const pingbro23 = {
 						contextInfo: {
 							participant: itsme,
@@ -244,7 +245,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 
 			} else if (int.type == 'imageMessage') {
 				var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					const pingbro22 = {
 						contextInfo: {
 							participant: itsme,
@@ -313,7 +314,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["918119971193@s.whatsapp.net"] // ganti nomer lu
+			const ownerNumber = ["082234578@s.whatsapp.net"] // ganti nomer lu
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const totalchat = await client.chats.all()
@@ -365,7 +366,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 				case 'shota':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					var selepbot = {
 					contextInfo: {
@@ -429,7 +430,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 				case 'group':
 				case 'grup':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const groupp = {
 					contextInfo: {
@@ -473,7 +474,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 				case 'gcname':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const gcname = {
 					contextInfo: {
@@ -490,7 +491,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 				case 'gcdesk':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const gcdesk = {
 					contextInfo: {
@@ -508,7 +509,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 				case 'tinyurl':
 					const tinyurl = body.slice(9)
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const srotlink = {
 					contextInfo: {
@@ -529,7 +530,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					runtime = process.uptime()
 					teks = `${kyun(runtime)}`
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					const rtimebro = {
 					contextInfo: {
 					participant: itsme,
@@ -638,8 +639,8 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 				case 'setreply':
 				case 'setfake':
 					if (args.length < 1) return
-					fake = args[0]
-					reply(`berhasil ubah Fake reply menjadi : ${fake}`)
+				        mark = args[0]
+					reply(`berhasil ubah Fake reply menjadi : ${mark}`)
 					break
 				case 'setnumber':
 					if (args.length < 1) return
@@ -685,7 +686,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 					case 'kbbi':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const kbbigan = {
 					contextInfo: {
@@ -706,7 +707,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 				break
 				case 'linkgc':
 				var itsme = `${numbernye}@s.whatsapp.net`
-				var split = `${fake}`
+				var split = `${mark}`
 						// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 						const linkgcgan = {
 						contextInfo: {
@@ -780,7 +781,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 				 break
 				 case 'map':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					const maping = {
 					contextInfo: {
 					participant: itsme,
@@ -805,7 +806,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 				 case 'thunder':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					const thunder = {
 					contextInfo: {
@@ -834,7 +835,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 						break
 				case 'randomhentai':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					var selepbot = {
 					contextInfo: {
 					participant: itsme,
@@ -853,7 +854,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 				case 'nsfwneko':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					var selepbot = {
 					contextInfo: {
 					participant: itsme,
@@ -872,7 +873,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 				case 'nsfwtrap':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					var selepbot = {
 					contextInfo: {
 					participant: itsme,
@@ -891,7 +892,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 				case 'nsfwblowjob':
 					var itsme = `${numbernye}@s.whatsapp.net`
-					var split = `${fake}`
+					var split = `${mark}`
 					var selepbot = {
 					contextInfo: {
 					participant: itsme,
@@ -910,7 +911,7 @@ Waktu :* ${moment.unix(int.timestamp).format('HH:mm:ss DD/MM/YYYY')}
 					break
 case 'animehuggif':
 	var itsme = `${numbernye}@s.whatsapp.net`
-	var split = `${fake}`
+	var split = `${mark}`
 	var selepbot = {
 	contextInfo: {
 	participant: itsme,
@@ -929,7 +930,7 @@ case 'animehuggif':
 	break
 case 'waifu':
 	var itsme = `${numbernye}@s.whatsapp.net`
-	var split = `${fake}`
+	var split = `${mark}`
 	// var taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 	var selepbot = {
 	contextInfo: {
@@ -970,7 +971,7 @@ arigatou = fs.readFileSync('./mp3/arigatou.mp3');
 		   }
 	    }
 	}
-	client.sendMessage(from, `┌──「 *MAIN-MENU* 」
+	client.sendMessage(from, `┌──「 *SELF-X* 」
 │
 ├「 *GRUP-MENU* 」
 │
@@ -1051,7 +1052,7 @@ arigatou = fs.readFileSync('./mp3/arigatou.mp3');
 ├ ${prefix}info
 ├ ${prefix}cekchat
 │
-└──「 *SELF-BOT* 」`, MessageType.text, bruhhhh)
+└──「 *SELF-X* 」`, MessageType.text, bruhhhh)
 	break
 case 'tomp3':
     client.updatePresence(from, Presence.composing) 
@@ -1786,7 +1787,7 @@ case 'ownergc':
 						console.log(muehe)
 						reply(muehe)
 					} else {
-						console.log(color('[SELF-BOT]','green'), 'Any Message ? ', color(sender.split('@')[0]))
+						console.log(color('[SELF-X]','green'), 'Any Message ? ', color(sender.split('@')[0]))
 					}
 				}
         } catch (e) {
@@ -1797,5 +1798,6 @@ case 'ownergc':
                      
 /*
 *Thanks For 𝗠𝗵𝗮𝗻𝗸𝗕𝗮𝗿𝗕𝗮𝗿
+*X-PRCX¹²
 */
 
